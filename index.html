@@ -16,30 +16,32 @@
 <body>
     <div class="container">
         <section class="form-info">
-            <h2>FICOU COM DÚVIDA? NOS MANDE UMA MENSAGEM!</h2>
+            <h2>FICOU COM DÚVIDA? <br>NOS MANDE UMA MENSAGEM!</h2>
             <p>caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos em contato em menos de 24h.</p>
         </section>
         <form id="form" class="form">
-            <div class="form-content">
-                <label for="username"></label>
-                <input type="text" placeholder="Nome completo *">
+                <div class="formulario">
+                <div class="form-content">
+                    <label for="username"></label>
+                    <input type="text" placeholder="Nome completo *">
+                </div>
+                <div class="form-content">
+                    <label for="email"></label>
+                    <input type="text" placeholder="Email *">
+                </div>
+                <div class="form-content">
+                    <label for="telefone"></label>
+                    <input type="text" placeholder="Telefone *">
+                </div>
+                <div class="form-content mensagem">
+                    <label for="mensagem"></label>
+                    <input class="msg" type="text" placeholder="Mensagem*">
+                </div>
+                <a class="campo-obrigatorio">Campo Obrigatorio *</a>
+                
+                <button type="submit">Enviar</button>
             </div>
-            <div class="form-content">
-                <label for="email"></label>
-                <input type="text" placeholder="Email *">
-            </div>
-            <div class="form-content">
-                <label for="telefone"></label>
-                <input type="text" placeholder="Telefone *">
-            </div>
-            <div class="form-content">
-                <label for="mensagem"></label>
-                <input type="text" placeholder="Mensagem*">
-            </div>
-            <a class="campo-obrigatorio">Campo Obrigatorio *</a>
-
-            <button type="submit">Enviar</button>
-        </form>
+            </form>
     </div>
     <script src="src/js/index.js"></script>
 </body>
