@@ -199,3 +199,6 @@ button{
 .error-border input{
     border:1px solid #f52e2e;
 }
+.sucessForm input{
+    border:1px solid #3CCC87;
+}
