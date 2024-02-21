@@ -3,34 +3,50 @@ const nameInput = document.querySelector("#name");
 const email = document.querySelector("#email");
 const telefone = document.querySelector("#telefone");
 const mensagem = document.querySelector("#mensagem");
+const msgObg = document.querySelectorAll(".error-info");
+const errorMsg = document.querySelector(".error-info-mensagem")
 
-console.log(nameInput)
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    // verificando se o nome esta valido
-    if(nameInput.value === "") {
-        alert("por favor preencha o seu nome");
-        return;
-    }
-    //verificando se o email esta valido 
+
+    if(nameInput.value === ""){
+        nameInput.style.border = "2px solid #f52e2e";
+        msgObg[0].style.display="flex";
+    }else{
+        nameInput.style.border = "2px solid #3ccc87";
+        msgObg[0].style.display="";
+    };
+    
     if(email.value === "" || !validarEmail(email.value)){
-        alert("por favor preencha o seu email");
-        return;
-    }
-    // verificando se o telefone esta valido
-    if(telefone.value === ""){
-        alert("por favor preencha o seu telefone");
-        return;
-    }
+        email.style.border = "2px solid #f52e2e";
+        msgObg[1].style.display = "flex";
+        
+    }else{
+        email.style.border = "2px solid #3ccc87";
+        msgObg[1].style.display="";
+    };
+    
+    if(telefone.value === "" || !validarNumero(telefone.value)){
+        telefone.style.border = "2px solid #f52e2e" ;
+        msgObg[2].style.display = "flex"
+    }else{
+        telefone.style.border = "2px solid #3CCC87";
+        msgObg[2].style.display="";
+    };
+    
     if(mensagem.value === ""){
-        alert("escreva a sua mensagem");
+        mensagem.style.border = "2px solid #f52e2e";
+        errorMsg.style.display = "flex";
         return;
-    }
+    }else{
+        mensagem.style.border = "2px solid #3ccc87";
+        errorMsg.style.display="";
+    };
 
     form.submit()
 });
-    //função para validar email 
+
     function validarEmail(email){
         const emailRegex = new RegExp(
             /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-z]{2,}$/
@@ -39,6 +55,18 @@ form.addEventListener("submit", (event) => {
         return true;
     }
     return false;
-    }
-    
+        
+    };
+
+    function validarNumero(telefone) {
+        const telefoneRegex = new RegExp(
+            /^[0-9]/
+        );
+        if(telefoneRegex.test(telefone)){
+            return true;
+        }
+        return false;
+        
+    };
+
 
